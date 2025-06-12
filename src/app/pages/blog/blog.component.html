@@ -1,0 +1,34 @@
+<div class="blog-container">
+  <!-- Categorías -->
+  <aside class="categories">
+    <h2>Categories</h2>
+    <ul>
+      <li *ngFor="let cat of categories">{{ cat }}</li>
+    </ul>
+  </aside>
+
+  <!-- Publicaciones -->
+  <main class="posts">
+    <article *ngFor="let post of posts" class="post">
+      <div class="image-placeholder">1500 x 300</div>
+      <h3>{{ post.title }}</h3>
+      <p><strong>By {{ post.author }}</strong> | {{ post.date }} | Tags:
+        <span *ngFor="let tag of post.tags" class="tag">#{{ tag }}</span>
+      </p>
+      <p>{{ post.description }}</p>
+      <button>Read More</button>
+    </article>
+  </main>
+
+  <!-- Chat -->
+  <aside class="chat">
+    <h3>Chat with Other Users</h3>
+    <div class="messages">
+      <p *ngFor="let msg of messages"><strong>{{ msg.user }}:</strong> {{ msg.text }}</p>
+    </div>
+    <div class="input-area">
+      <input type="text" [(ngModel)]="newMessage" placeholder="Type a message" />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </aside>
+</div>
