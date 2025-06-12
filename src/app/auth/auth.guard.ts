@@ -3,7 +3,7 @@ import {AuthService} from "./auth.service";
 import {Injectable} from "@angular/core";
 
 @Injectable({
-  providedIn: 'root' // ✅ Esto lo registra automáticamente
+  providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
   constructor(private auth: AuthService, private router: Router) {}

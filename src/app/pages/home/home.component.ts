@@ -35,7 +35,7 @@ caragarproductos(){
 
       this.productoService.push(this.productForm.value).subscribe(() => {
       this.productForm.reset({ price: 0 });
-        this.caragarproductos();// limpia y deja 0 como precio
+        this.caragarproductos();/
       });
   }
 
